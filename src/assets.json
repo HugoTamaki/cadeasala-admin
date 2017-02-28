@@ -1,0 +1,36 @@
+{
+  "fonts": [
+    "lib/bootstrap/fonts/**/**.*",
+    "lib/fontawesome/fonts/**/**.*"
+  ],
+
+  "css": [],
+
+  "js": [
+    "lib/pusher-websocket-iso/dist/web/pusher",
+    "lib/lodash/dist/lodash.min",
+    "lib/moment/min/moment-with-locales.min",
+
+    "lib/jquery/dist/jquery.min",
+    "lib/bootstrap/dist/js/bootstrap.min",
+    "lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min",
+    "lib/remarkable-bootstrap-notify/bootstrap-growl.min",
+
+    "lib/angular/angular.min",
+    "lib/angular-resource/angular-resource",
+    "lib/angular-animate/angular-animate",
+    "lib/angular-ui-router/release/angular-ui-router.min",
+    "lib/angular-bootstrap/ui-bootstrap.min",
+    "lib/angular-bootstrap/ui-bootstrap-tpls.min",
+    "lib/angular-local-storage/dist/angular-local-storage.min",
+    "lib/angular-eonasdan-datetimepicker/dist/angular-eonasdan-datetimepicker",
+    "lib/moment/moment",
+
+    "js/app",
+    "js/services/*",
+    "js/factories/*",
+    "js/resources/*",
+    "js/directives/*",
+    "js/controllers/*"
+  ]
+}

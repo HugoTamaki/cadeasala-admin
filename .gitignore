@@ -1,0 +1,12 @@
+npm-debug.log
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
+src/lib/
+
+www/
+node_modules/
+
+config/production.json
+config/build.json
+config/development.json
