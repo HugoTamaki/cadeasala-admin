@@ -81,7 +81,7 @@ cadeasalaAdmin.run(['$rootScope', '$state', '$location', 'appConfig', 'AuthServi
 
 cadeasalaAdmin.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'localStorageServiceProvider', function ($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider) {
   localStorageServiceProvider.setPrefix('cadeasalaAdmin');
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
   // $httpProvider.defaults.withCredentials = true;
   $httpProvider.interceptors.push('UpdateAuthToken');
 }]);
