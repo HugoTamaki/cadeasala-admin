@@ -4,7 +4,9 @@
     "lib/fontawesome/fonts/**/**.*"
   ],
 
-  "css": [],
+  "css": [
+    "lib/bootstrap-css-only/boostrap.min"
+  ],
 
   "js": [
     "lib/pusher-websocket-iso/dist/web/pusher",
