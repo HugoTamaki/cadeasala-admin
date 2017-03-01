@@ -2,16 +2,17 @@
 
 cadeasalaAdminResources.factory('Login', ['$resource', 'appConfig', function($resource, appConfig) {
   return $resource(
-    '{0}/login'.format([appConfig.backendURL]),
+    '{0}/users/sign_in'.format([appConfig.backendURL]),
     null,
     {
       save: {
         method: 'POST',
-        transformResponse: function (data, headersGetter) {
+        headers: {'Content-type': 'application/json'},
+        transformResponse: function (data, headers) {
           data = JSON.parse(data);
 
           data.headers = {
-            'XSRF-TOKEN': headersGetter('XSRF-TOKEN')
+            'XSRF-TOKEN': headers('xsrf-token')
           };
 
           return data

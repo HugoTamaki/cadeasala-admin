@@ -5,7 +5,7 @@
   ],
 
   "css": [
-    "lib/bootstrap-css-only/boostrap.min"
+    "lib/bootstrap-css-only/css/bootstrap.min"
   ],
 
   "js": [
