@@ -4,13 +4,13 @@ angular.module('cadeasalaAdmin.login', [])
   .config(['$stateProvider', function($stateProvider) {
     $stateProvider.state('loginState', {
       cache: false,
-      url: '/',
+      url: '/login',
       templateUrl: 'templates/login.html',
       controller: 'LoginController'
     })
   }])
 
-  .controller('LoginController', ['$scope', 'Login', 'AuthService', 'GrowlService', function($scope, Login, AuthService, GrowlService) {
+  .controller('LoginController', ['$scope', '$state', 'Login', 'AuthService', 'GrowlService', function($scope, $state, Login, AuthService, GrowlService) {
     $scope.login = {
       email: null,
       password: null
@@ -24,6 +24,7 @@ angular.module('cadeasalaAdmin.login', [])
         function(response) {
           AuthService.updateToken(response.headers['XSRF-TOKEN'])
           GrowlService.growl('Login realizado com sucesso.')
+          $state.go('homeState')
         },
         function(response) {
           GrowlService.growl('Algo aconteceu de errado. Tente novamente.')
