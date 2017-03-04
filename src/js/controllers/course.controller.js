@@ -24,6 +24,18 @@ angular.module('cadeasalaAdmin.course', [])
       }
     )
 
+    $scope.datetimeOptions = {
+      format: 'DD/MM/YYYY HH:mm a'
+    }
+
+    $scope.dateOptions = {
+      format: 'DD/MM/YYYY'
+    }
+
+    $scope.timeOptions = {
+      format: 'HH:mm - HH:mm'
+    }
+
     $scope.updateCourseDisciplines = function() {
       CourseDisciplineBulkUpdate.update(
         {
@@ -37,6 +49,7 @@ angular.module('cadeasalaAdmin.course', [])
         },
         function(response) {
           $scope.courseDisciplines = response.course_disciplines
+          GrowlService.growl('Dados atualizados.')
         },
         function(err) {
           GrowlService.growl('Algum problema aconteceu. Tente novamente.')

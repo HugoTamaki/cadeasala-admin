@@ -1,9 +1,13 @@
 .content {
   padding: 5px;
   .inner-content {
+    label {
+      margin-left: 5px;
+    }
+
     border: 1px #333 solid;
     &.course {
-      min-height: 450px;
+      min-height: 546px;
     }
     .title {
       font-size: 20px;
