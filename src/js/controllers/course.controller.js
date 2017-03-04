@@ -10,14 +10,13 @@ angular.module('cadeasalaAdmin.course', [])
     })
   }])
 
-  .controller('CourseController', ['$scope', '$state', '$stateParams', 'Course', 'GrowlService', 'CourseDiscipline', function($scope, $state, $stateParams, Course, GrowlService, CourseDiscipline) {
+  .controller('CourseController', ['$scope', '$state', '$stateParams', 'Course', 'GrowlService', 'CourseDiscipline', 'CourseDisciplineBulkUpdate', function($scope, $state, $stateParams, Course, GrowlService, CourseDiscipline, CourseDisciplineBulkUpdate) {
     CourseDiscipline.get(
       {
         locationId: $stateParams.locationId,
         courseId: $stateParams.courseId
       },
       function(response) {
-        console.log(response)
         $scope.courseDisciplines = response.course_disciplines
       },
       function(err) {
@@ -26,6 +25,22 @@ angular.module('cadeasalaAdmin.course', [])
     )
 
     $scope.updateCourseDisciplines = function() {
-      
+      CourseDisciplineBulkUpdate.update(
+        {
+          locationId: $stateParams.locationId,
+          courseId: $stateParams.courseId
+        },
+        {
+          course_discipline: {
+            data: $scope.courseDisciplines
+          }
+        },
+        function(response) {
+          $scope.courseDisciplines = response.course_disciplines
+        },
+        function(err) {
+          GrowlService.growl('Algum problema aconteceu. Tente novamente.')
+        }
+      )
     }
   }])
