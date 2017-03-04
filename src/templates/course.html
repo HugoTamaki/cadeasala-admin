@@ -1,0 +1,77 @@
+<div class="container">
+  <h1>Dados das disciplinas</h1>
+
+  <div class="row">
+    <div class="col-lg-4 content" ng-repeat="courseDiscipline in courseDisciplines">
+      <div class="inner-content course">
+        <div class="title">
+          {{ courseDiscipline.discipline_name }}
+        </div>
+
+        <label>
+          Local AP1
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap1Local' }}" ng-model="courseDiscipline.ap1_local">
+        </label>
+
+        <label>
+          Data AP1
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap1Date' }}" ng-model="courseDiscipline.ap1_date">
+        </label>
+
+        <label>
+          Local AP2
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap2Local' }}" ng-model="courseDiscipline.ap2_local">
+        </label>
+
+        <label>
+          Data AP2
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap2Date' }}" ng-model="courseDiscipline.ap1_date">
+        </label>
+
+        <label>
+          Local AP3
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap3Local' }}" ng-model="courseDiscipline.ap3_local">
+        </label>
+
+        <label>
+          Data AP3
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap3Date' }}" ng-model="courseDiscipline.ap3_date">
+        </label>
+
+        <label>
+          Deadline AD1
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ad1Deadline' }}" ng-model="courseDiscipline.ad1_deadline">
+        </label>
+
+        <label>
+          Deadline AD2
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ad2Deadline' }}" ng-model="courseDiscipline.ad2_deadline">
+        </label>
+
+        <label>
+          Tutor Presencial
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_presencialTutor' }}" ng-model="courseDiscipline.presencial_tutor">
+        </label>
+
+        <label>
+          Sala da tutoria
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipRoom' }}" ng-model="courseDiscipline.tutorship_room">
+        </label>
+
+        <label>
+          Hora da Tutoria
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipTime' }}" ng-model="courseDiscipline.tutorship_time">
+        </label>
+
+        <label>
+          Dia da tutoria
+          <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipWeekday' }}" ng-model="courseDiscipline.tutorship_weekday">
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" ng-click="updateCourseDisciplines()">
+    Atualizar
+  </button>
+</div>

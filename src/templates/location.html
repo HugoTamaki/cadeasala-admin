@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Cursos</h1>
   
-  <div class="col-lg-3 content" ng-repeat="course in courses">
+  <div class="col-lg-3 content" ng-repeat="course in courses" ng-click="goToCourse(course)">
     <div class="inner-content">
       {{ course.name }}
     </div>

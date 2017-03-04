@@ -10,7 +10,7 @@ angular.module('cadeasalaAdmin.location', [])
     })
   }])
 
-  .controller('LocationController', ['$scope', '$stateParams', 'Course', 'GrowlService', function($scope, $stateParams, Course, GrowlService) {
+  .controller('LocationController', ['$scope', '$state', '$stateParams', 'Course', 'GrowlService', function($scope, $state, $stateParams, Course, GrowlService) {
     Course.get(
       {
         locationId: $stateParams.locationId
@@ -22,4 +22,8 @@ angular.module('cadeasalaAdmin.location', [])
         GrowlService.growl('Algum problema aconteceu. Tente novamente.')
       }
     )
+
+    $scope.goToCourse = function(course) {
+      $state.go('courseState', {locationId: $stateParams.locationId, courseId: course.id})
+    }
   }])
