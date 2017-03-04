@@ -66,7 +66,9 @@ var cadeasalaAdmin = angular.module(
     'cadeasalaAdmin.resources',
     'cadeasalaAdmin.directives',
 
-    'cadeasalaAdmin.login'
+    'cadeasalaAdmin.login',
+    'cadeasalaAdmin.home',
+    'cadeasalaAdmin.location'
   ]
 );
 
@@ -82,6 +84,8 @@ cadeasalaAdmin.run(['$rootScope', '$state', '$location', 'appConfig', 'AuthServi
 }]);
 
 cadeasalaAdmin.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'localStorageServiceProvider', function ($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider) {
-  localStorageServiceProvider.setPrefix('cadeasalaAdmin');
-  $urlRouterProvider.otherwise('/');
+  localStorageServiceProvider.setPrefix('cadeasalaAdmin')
+  $urlRouterProvider.otherwise('/')
+
+  $httpProvider.interceptors.push('updateToken')
 }]);
