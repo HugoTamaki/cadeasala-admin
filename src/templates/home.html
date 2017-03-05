@@ -1,9 +1,12 @@
 <div class="container">
   <h1>Cade a Sala - Admin</h1>
 
-  <div class="col-lg-3 content" ng-repeat="location in locations" ng-click="goToLocation(location)">
-    <div class="inner-content">
-      {{ location.name }}
+  <div class="row">
+    <span us-spinner spinner-theme="small" spinner-key="locations" spinner-start-active="true"></span>
+    <div class="col-lg-3 content" ng-repeat="location in locations" ng-click="goToLocation(location)">
+      <div class="inner-content">
+        {{ location.name }}
+      </div>
     </div>
   </div>
 </div>

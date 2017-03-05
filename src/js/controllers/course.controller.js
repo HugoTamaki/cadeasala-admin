@@ -10,7 +10,7 @@ angular.module('cadeasalaAdmin.course', [])
     })
   }])
 
-  .controller('CourseController', ['$scope', '$state', '$stateParams', 'Course', 'GrowlService', 'CourseDiscipline', 'CourseDisciplineBulkUpdate', function($scope, $state, $stateParams, Course, GrowlService, CourseDiscipline, CourseDisciplineBulkUpdate) {
+  .controller('CourseController', ['$scope', '$state', '$stateParams', 'Course', 'GrowlService', 'CourseDiscipline', 'CourseDisciplineBulkUpdate', 'usSpinnerService',  function($scope, $state, $stateParams, Course, GrowlService, CourseDiscipline, CourseDisciplineBulkUpdate, usSpinnerService) {
     CourseDiscipline.get(
       {
         locationId: $stateParams.locationId,
@@ -18,9 +18,11 @@ angular.module('cadeasalaAdmin.course', [])
       },
       function(response) {
         $scope.courseDisciplines = response.course_disciplines
+        usSpinnerService.stop('disciplines')
       },
       function(err) {
         GrowlService.growl('Algum problema aconteceu. Tente novamente.')
+        usSpinnerService.stop('disciplines')
       }
     )
 
@@ -32,11 +34,9 @@ angular.module('cadeasalaAdmin.course', [])
       format: 'DD/MM/YYYY'
     }
 
-    $scope.timeOptions = {
-      format: 'HH:mm - HH:mm'
-    }
-
     $scope.updateCourseDisciplines = function() {
+      usSpinnerService.spin('disciplines')
+
       CourseDisciplineBulkUpdate.update(
         {
           locationId: $stateParams.locationId,
@@ -50,9 +50,11 @@ angular.module('cadeasalaAdmin.course', [])
         function(response) {
           $scope.courseDisciplines = response.course_disciplines
           GrowlService.growl('Dados atualizados.')
+          usSpinnerService.stop('disciplines')
         },
         function(err) {
           GrowlService.growl('Algum problema aconteceu. Tente novamente.')
+          usSpinnerService.stop('disciplines')
         }
       )
     }

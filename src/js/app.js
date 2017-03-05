@@ -57,6 +57,7 @@ var cadeasalaAdmin = angular.module(
   'cadeasalaAdmin', [
     'ngResource',
     'ngAnimate',
+    'angularSpinner',
     'ui.router',
     'ui.bootstrap',
     'ae-datetimepicker',
@@ -84,9 +85,11 @@ cadeasalaAdmin.run(['$rootScope', '$state', '$location', 'appConfig', 'AuthServi
   }
 }]);
 
-cadeasalaAdmin.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'localStorageServiceProvider', function ($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider) {
+cadeasalaAdmin.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'localStorageServiceProvider', 'usSpinnerConfigProvider', function ($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider, usSpinnerConfigProvider) {
   localStorageServiceProvider.setPrefix('cadeasalaAdmin')
   $urlRouterProvider.otherwise('/')
 
   $httpProvider.interceptors.push('updateToken')
+
+  usSpinnerConfigProvider.setTheme('small', { color: 'black', radius: 6, top: '50%', left: '50%' })
 }]);

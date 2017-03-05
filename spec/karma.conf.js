@@ -11,18 +11,19 @@ module.exports = function (config) {
 
       "../src/lib/jquery/dist/jquery.min.js",
       "../src/lib/bootstrap/dist/js/bootstrap.min.js",
+      "../src/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js",
       "../src/lib/remarkable-bootstrap-notify/bootstrap-growl.min.js",
 
       "../src/lib/angular/angular.min.js",
       "../src/lib/angular-resource/angular-resource.js",
-      "../src/lib/angular-mocks/angular-mocks.js",
       "../src/lib/angular-animate/angular-animate.js",
       "../src/lib/angular-ui-router/release/angular-ui-router.min.js",
       "../src/lib/angular-bootstrap/ui-bootstrap.min.js",
       "../src/lib/angular-bootstrap/ui-bootstrap-tpls.min.js",
+      "../src/lib/angular-spinner/dist/angular-spinner.min.js",
       "../src/lib/angular-local-storage/dist/angular-local-storage.min.js",
-      "../src/lib/moment/moment.js",
       "../src/lib/angular-eonasdan-datetimepicker/dist/angular-eonasdan-datetimepicker.js",
+      "../src/lib/moment/moment.js",
 
       '../src/js/**/*.js',
       'fixtures/**/*.json',
@@ -42,4 +43,4 @@ module.exports = function (config) {
       camelizeFilenames: true
     }
   });
-};
+}
