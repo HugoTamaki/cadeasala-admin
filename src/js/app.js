@@ -81,8 +81,10 @@ cadeasalaAdmin.constant('appConfig', {
 
 cadeasalaAdmin.run(['$rootScope', '$state', '$location', 'appConfig', 'AuthService', function($rootScope, $state, $location, appConfig, AuthService) {
   if (!AuthService.userIsLogged()) {
-    $state.go('loginState');
+    $state.go('loginState')
   }
+
+  moment.locale('pt-BR')
 }]);
 
 cadeasalaAdmin.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', 'localStorageServiceProvider', 'usSpinnerConfigProvider', function ($stateProvider, $urlRouterProvider, $httpProvider, localStorageServiceProvider, usSpinnerConfigProvider) {

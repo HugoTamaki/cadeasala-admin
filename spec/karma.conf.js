@@ -8,6 +8,7 @@ module.exports = function (config) {
     files: [
       "../src/lib/lodash/dist/lodash.min.js",
       "../src/lib/moment/min/moment-with-locales.min.js",
+      "../src/lib/moment/locale/pt-br.js",
 
       "../src/lib/jquery/dist/jquery.min.js",
       "../src/lib/bootstrap/dist/js/bootstrap.min.js",
@@ -23,7 +24,6 @@ module.exports = function (config) {
       "../src/lib/angular-spinner/dist/angular-spinner.min.js",
       "../src/lib/angular-local-storage/dist/angular-local-storage.min.js",
       "../src/lib/angular-eonasdan-datetimepicker/dist/angular-eonasdan-datetimepicker.js",
-      "../src/lib/moment/moment.js",
 
       '../src/js/**/*.js',
       'fixtures/**/*.json',

@@ -10,7 +10,7 @@ angular.module('cadeasalaAdmin.location', [])
     })
   }])
 
-  .controller('LocationController', ['$scope', '$state', '$stateParams', 'Course', 'GrowlService', function($scope, $state, $stateParams, Course, GrowlService) {
+  .controller('LocationController', ['$scope', '$rootScope', '$state', '$stateParams', 'Course', 'GrowlService', function($scope, $rootScope, $state, $stateParams, Course, GrowlService) {
     Course.get(
       {
         locationId: $stateParams.locationId

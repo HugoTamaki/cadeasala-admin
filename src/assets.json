@@ -11,6 +11,7 @@
   "js": [
     "lib/lodash/dist/lodash.min",
     "lib/moment/min/moment-with-locales.min",
+    "lib/moment/locale/pt-br",
 
     "lib/jquery/dist/jquery.min",
     "lib/bootstrap/dist/js/bootstrap.min",
@@ -26,7 +27,6 @@
     "lib/angular-spinner/dist/angular-spinner.min",
     "lib/angular-local-storage/dist/angular-local-storage.min",
     "lib/angular-eonasdan-datetimepicker/dist/angular-eonasdan-datetimepicker",
-    "lib/moment/moment",
 
     "js/app",
     "js/services/*",
