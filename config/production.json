@@ -1,0 +1,4 @@
+{
+  "env": "production",
+  "backendURL": "http://54.208.105.99/api/v1"
+}

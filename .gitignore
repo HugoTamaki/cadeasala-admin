@@ -7,6 +7,5 @@ src/lib/
 www/
 node_modules/
 
-config/production.json
 config/build.json
 config/development.json
