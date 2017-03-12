@@ -12,84 +12,84 @@
         <div class="form-group">
           <label>
             Local AP1
-            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap1Local' }}" ng-model="courseDiscipline.ap1_local" class="form-control">
+            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap1Local' }}" ng-model="courseDiscipline.ap1_local" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Data AP1
-            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ap1Date' }}" ng-model="courseDiscipline.ap1_date" options="datetimeOptions" class="form-control">
+            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ap1Date' }}" ng-model="courseDiscipline.ap1_date" options="datetimeOptions" class="form-control wide">
         </div>
         </label>
 
         <div class="form-group">
           <label>
             Local AP2
-            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap2Local' }}" ng-model="courseDiscipline.ap2_local" class="form-control">
+            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap2Local' }}" ng-model="courseDiscipline.ap2_local" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Data AP2
-            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ap2Date' }}" ng-model="courseDiscipline.ap2_date" options="datetimeOptions" class="form-control">
+            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ap2Date' }}" ng-model="courseDiscipline.ap2_date" options="datetimeOptions" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Local AP3
-            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap3Local' }}" ng-model="courseDiscipline.ap3_local" class="form-control">
+            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_ap3Local' }}" ng-model="courseDiscipline.ap3_local" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Data AP3
-            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ap3Date' }}" ng-model="courseDiscipline.ap3_date" options="datetimeOptions" class="form-control">
+            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ap3Date' }}" ng-model="courseDiscipline.ap3_date" options="datetimeOptions" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Deadline AD1
-            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ad1Deadline' }}" ng-model="courseDiscipline.ad1_deadline" options="dateOptions" class="form-control">
+            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ad1Deadline' }}" ng-model="courseDiscipline.ad1_deadline" options="dateOptions" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Deadline AD2
-            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ad2Deadline' }}" ng-model="courseDiscipline.ad2_deadline" options="dateOptions" class="form-control">
+            <input type="text" datetimepicker name="{{ courseDiscipline.discipline_name.slugify() + '_ad2Deadline' }}" ng-model="courseDiscipline.ad2_deadline" options="dateOptions" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Tutor Presencial
-            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_presencialTutor' }}" ng-model="courseDiscipline.presencial_tutor" class="form-control">
+            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_presencialTutor' }}" ng-model="courseDiscipline.presencial_tutor" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Sala da tutoria
-            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipRoom' }}" ng-model="courseDiscipline.tutorship_room" class="form-control">
+            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipRoom' }}" ng-model="courseDiscipline.tutorship_room" class="form-control wide">
           </label>
         </div>
 
         <div class="form-group">
           <label>
             Hora da Tutoria
-            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipTime' }}" ng-model="courseDiscipline.tutorship_time" class="form-control">
+            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipTime' }}" ng-model="courseDiscipline.tutorship_time" class="form-control wide">
         </div>
         </label>
 
         <div class="form-group">
           <label>
             Dia da tutoria
-            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipWeekday' }}" ng-model="courseDiscipline.tutorship_weekday" class="form-control">
+            <input type="text" name="{{ courseDiscipline.discipline_name.slugify() + '_tutorshipWeekday' }}" ng-model="courseDiscipline.tutorship_weekday" class="form-control wide">
           </label>
         </div>
       </div>
@@ -98,5 +98,8 @@
 
   <button class="btn btn-primary" ng-click="updateCourseDisciplines()">
     Atualizar
+  </button>
+  <button class="btn btn-primary" ng-click="eraseCourseDisciplinesData()">
+    Apagar
   </button>
 </div>

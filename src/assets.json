@@ -5,7 +5,8 @@
   ],
 
   "css": [
-    "lib/bootstrap-css-only/css/bootstrap.min"
+    "lib/bootstrap-css-only/css/bootstrap.min",
+    "lib/fontawesome/css/font-awesome.min"
   ],
 
   "js": [

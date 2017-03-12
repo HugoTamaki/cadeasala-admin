@@ -1,17 +1,29 @@
-.content {
-  padding: 5px;
-  .inner-content {
-    label {
-      margin-left: 5px;
-    }
+body {
+  background-color: #C9E3F8;
 
-    border: 1px #333 solid;
-    &.course {
-      min-height: 546px;
-    }
-    .title {
-      font-size: 20px;
-      margin: 10px 5px;
+  .content {
+    padding: 5px;
+    .inner-content {
+      padding: 10px 10px;
+
+      background-color: #fff;
+      label {
+        margin-left: 5px;
+      }
+
+      border: 1px #333 solid;
+      &.course {
+        min-height: 566px;
+      }
+      &.small-height {
+        min-height: 78px;
+        font-weight: 500;
+        font-size: 20px;
+      }
+      .title {
+        font-size: 20px;
+        margin: 10px 5px;
+      }
     }
   }
 }
