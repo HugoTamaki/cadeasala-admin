@@ -70,7 +70,8 @@ var cadeasalaAdmin = angular.module(
     'cadeasalaAdmin.login',
     'cadeasalaAdmin.home',
     'cadeasalaAdmin.location',
-    'cadeasalaAdmin.course'
+    'cadeasalaAdmin.course',
+    'cadeasalaAdmin.menu'
   ]
 );
 

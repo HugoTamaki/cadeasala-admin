@@ -10,7 +10,9 @@ angular.module('cadeasalaAdmin.home', [])
     })
   }])
 
-  .controller('HomeController', ['$scope', '$state', 'Location', 'GrowlService', 'usSpinnerService', function($scope, $state, Location, GrowlService, usSpinnerService) {
+  .controller('HomeController', ['$scope', '$rootScope', '$state', 'Location', 'GrowlService', 'usSpinnerService', function($scope, $rootScope, $state, Location, GrowlService, usSpinnerService) {
+    $rootScope.currentLocation = null
+
     Location.get(
       null,
       function(response) {
@@ -24,6 +26,7 @@ angular.module('cadeasalaAdmin.home', [])
     )
 
     $scope.goToLocation = function(location) {
+      $rootScope.currentLocation = location.name
       $state.go('locationState', { locationId: location.id })
     }
   }])

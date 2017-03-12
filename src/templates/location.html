@@ -1,6 +1,11 @@
-<div class="container">
-  <h1>Cursos</h1>
-  
+<h1>Cursos</h1>
+
+<ul class="breadcrumb">
+  <li><a ui-sref="homeState">{{ currentLocation }}</a></li>
+</ul>
+
+<div class="row">
+  <span us-spinner spinner-theme="small" spinner-key="courses" spinner-start-active="true"></span>
   <div class="col-lg-3 content" ng-repeat="course in courses" ng-click="goToCourse(course)">
     <div class="inner-content small-height">
       {{ course.name }}
