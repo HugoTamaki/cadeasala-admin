@@ -1,6 +1,12 @@
 body {
   background-color: #C9E3F8;
 
+  .breadcrumb {
+    a {
+      cursor: pointer;
+    }
+  }
+
   .content {
     padding: 5px;
     .inner-content {
@@ -16,6 +22,7 @@ body {
         min-height: 566px;
       }
       &.small-height {
+        cursor: pointer;
         min-height: 78px;
         font-weight: 500;
         font-size: 20px;

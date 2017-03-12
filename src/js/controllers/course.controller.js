@@ -59,6 +59,10 @@ angular.module('cadeasalaAdmin.course', [])
       format: 'DD/MM/YYYY'
     }
 
+    $scope.goToLocation = function(location) {
+      $state.go('locationState', { locationId: location.id })
+    }
+
     $scope.updateCourseDisciplines = function() {
       usSpinnerService.spin('disciplines')
 
