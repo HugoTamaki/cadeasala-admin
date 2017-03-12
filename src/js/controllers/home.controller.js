@@ -26,7 +26,6 @@ angular.module('cadeasalaAdmin.home', [])
     )
 
     $scope.goToLocation = function(location) {
-      $rootScope.currentLocation = location.name
       $state.go('locationState', { locationId: location.id })
     }
   }])

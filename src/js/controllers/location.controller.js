@@ -10,8 +10,18 @@ angular.module('cadeasalaAdmin.location', [])
     })
   }])
 
-  .controller('LocationController', ['$scope', '$rootScope', '$state', '$stateParams', 'Course', 'GrowlService', 'usSpinnerService', function($scope, $rootScope, $state, $stateParams, Course, GrowlService, usSpinnerService) {
-    $rootScope.currentCourse = null;
+  .controller('LocationController', ['$scope', '$rootScope', '$state', '$stateParams', 'Course', 'Location', 'GrowlService', 'usSpinnerService', function($scope, $rootScope, $state, $stateParams, Course, Location, GrowlService, usSpinnerService) {
+    Location.get(
+      {
+        locationId: $stateParams.locationId
+      },
+      function(response) {
+        $scope.currentLocation = response.location
+      },
+      function(err) {
+        GrowlService.growl('Algum problema aconteceu. Tente novamente.')
+      }
+    )
 
     Course.get(
       {
