@@ -38,5 +38,9 @@
     "karma-json-fixtures-preprocessor": "^0.0.6",
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-spec-reporter": "0.0.26"
+  },
+  "engines": {
+    "npm": "2.1.x",
+    "node": "6.9.4"
   }
 }
