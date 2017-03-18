@@ -16,6 +16,7 @@ module.exports = function (config) {
       "../src/lib/remarkable-bootstrap-notify/bootstrap-growl.min.js",
 
       "../src/lib/angular/angular.min.js",
+      "../src/lib/angular-mocks/angular-mocks.js",
       "../src/lib/angular-resource/angular-resource.js",
       "../src/lib/angular-animate/angular-animate.js",
       "../src/lib/angular-ui-router/release/angular-ui-router.min.js",
