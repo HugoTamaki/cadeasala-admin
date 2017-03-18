@@ -27,18 +27,19 @@ module.exports = function (config) {
       "../src/lib/angular-eonasdan-datetimepicker/dist/angular-eonasdan-datetimepicker.js",
 
       '../src/js/**/*.js',
-      'fixtures/**/*.json',
       'phantomjs-fix.js',
       'unit/**/*.js'
     ],
     autoWatch: true,
     frameworks: ['jasmine'],
     browsers: ['PhantomJS'],
+    reporters: ['spec'],
     plugins: [
       'karma-phantomjs-launcher',
       'karma-coverage',
       'karma-jasmine',
-      'karma-json-fixtures-preprocessor'
+      'karma-json-fixtures-preprocessor',
+      'karma-spec-reporter'
     ],
     jsonFixturesPreprocessor: {
       camelizeFilenames: true
