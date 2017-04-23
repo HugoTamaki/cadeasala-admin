@@ -10,10 +10,10 @@ angular.module('cadeasalaAdmin.course', [])
     })
   }])
 
-  .controller('CourseController', ['$scope', '$state', '$stateParams', 'Location', 'Course', 'GrowlService', 'CourseDiscipline', 'CourseDisciplineBulkUpdate', 'usSpinnerService',  function($scope, $state, $stateParams, Location, Course, GrowlService, CourseDiscipline, CourseDisciplineBulkUpdate, usSpinnerService) {
+  .controller('CourseController', ['$scope', '$state', '$stateParams', '$rootScope', 'Location', 'Course', 'GrowlService', 'CourseDiscipline', 'CourseDisciplineBulkUpdate', 'usSpinnerService',  function($scope, $state, $stateParams, $rootScope, Location, Course, GrowlService, CourseDiscipline, CourseDisciplineBulkUpdate, usSpinnerService) {
     Location.get(
       {
-        locationId: $stateParams.locationId
+        locationId: $stateParams.locationId || $rootScope.locationId
       },
       function(response) {
         $scope.currentLocation = response.location
@@ -25,8 +25,8 @@ angular.module('cadeasalaAdmin.course', [])
 
     Course.get(
       {
-        locationId: $stateParams.locationId,
-        courseId: $stateParams.courseId
+        locationId: $stateParams.locationId || $rootScope.locationId,
+        courseId: $stateParams.courseId || $rootScope.courseId
       },
       function(response) {
         $scope.currentCourse = response.course
@@ -38,8 +38,8 @@ angular.module('cadeasalaAdmin.course', [])
 
     CourseDiscipline.get(
       {
-        locationId: $stateParams.locationId,
-        courseId: $stateParams.courseId
+        locationId: $stateParams.locationId || $rootScope.locationId,
+        courseId: $stateParams.courseId || $rootScope.courseId
       },
       function(response) {
         $scope.courseDisciplines = response.course_disciplines
@@ -51,6 +51,9 @@ angular.module('cadeasalaAdmin.course', [])
       }
     )
 
+    $rootScope.locationId = null
+    $rootScope.courseId = null
+
     $scope.datetimeOptions = {
       format: 'DD/MM/YYYY HH:mm a'
     }
@@ -61,6 +64,12 @@ angular.module('cadeasalaAdmin.course', [])
 
     $scope.goToLocation = function(location) {
       $state.go('locationState', { locationId: location.id })
+    }
+
+    $scope.editDiscipline = function(courseDiscipline) {
+      $rootScope.locationId = $stateParams.locationId
+      $rootScope.courseId = $stateParams.courseId
+      $state.go('disciplineState', {disciplineId: courseDiscipline.discipline_id})
     }
 
     $scope.updateCourseDisciplines = function() {

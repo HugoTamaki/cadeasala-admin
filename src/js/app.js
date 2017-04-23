@@ -71,6 +71,7 @@ var cadeasalaAdmin = angular.module(
     'cadeasalaAdmin.home',
     'cadeasalaAdmin.location',
     'cadeasalaAdmin.course',
+    'cadeasalaAdmin.discipline',
     'cadeasalaAdmin.menu'
   ]
 );
